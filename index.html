@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seraphim Photography | Capture Eternal Moments</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="welcome-overlay">
+        <div class="welcome-card">
+            <div class="welcome-img">
+                <img src="assets/seraphim.png" alt="Welcome Icon">
+            </div>
+            <h2>Selamat Datang!</h2>
+            <p>Silakan isi nama Anda untuk masuk</p>
+            
+            <div class="input-wrapper">
+                <input type="text" id="input-nama-user" placeholder="Ketik nama Anda di sini..." autocomplete="off">
+                <small id="error-message" class="error-hidden">* Nama harus diisi dulu ya!</small>
+            </div>
+
+            <button onclick="masukWebsite()" class="btn-enter">Masuk Website</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            Seraphim<span class="highlight">Profile</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Our Profile</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#message-us" class="btn-message">Message Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content fade-in">
+            <h1>Hi <span id="user-name-span" class="highlight">User</span>, <br> Capture Your Eternal Moments.</h1>
+            <p>Kami melukis cahaya menjadi kenangan abadi. Temukan sisi terbaik dirimu bersama lensa profesional kami.</p>
+            <a href="#gallery" class="btn-hero">Explore Gallery</a>
+        </div>
+    </section>
+
+    <section id="hq">
+        <div class="hq-container fade-in reveal">
+            <h3>Our Headquarters</h3>
+            <div class="circles">
+                <div class="place">
+                    <div class="circle" style="background-image: url('https://ik.imagekit.io/tvlk/blog/2025/07/monas-mob.jpg');"></div>
+                    <p>Jakarta</p>
+                </div>
+                <div class="place">
+                    <div class="circle" style="background-image: url('https://storage.googleapis.com/sahabat-pegadaian-asset-prd/20241218-091807_tempat-wisata-di-bandungwebp.webp');"></div>
+                    <p>Bandung</p>
+                </div>
+                <div class="place">
+                    <div class="circle" style="background-image: url('https://discoveringsurabaya.wordpress.com/wp-content/uploads/2015/09/landmark1.jpg');"></div>
+                    <p>Surabaya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="section-gray">
+        <div class="profile-container fade-in reveal">
+            <h2>Our Profile</h2>
+            <div class="profile-content">
+                <div class="profile-img">
+                    <img src="assets/seraphim2.png" alt="Company Team">
+                </div>
+                <div class="profile-text">
+                    <h4>About the Company</h4>
+                    <p>Kami adalah tim fotografer profesional yang menggabungkan teknik pencahayaan modern dengan visi artistik yang tajam. Seraphim Photography hadir untuk menangkap detail terbaik Anda, memberikan hasil visual berkualitas tinggi yang berbicara lebih keras daripada kata-kata.</p>
+                    
+                    <h4>Vision & Mission</h4>
+                    <p><strong>Visi:</strong> Menjadi mitra fotografi terpercaya nomor satu di Indonesia yang dikenal karena kualitas, inovasi, dan integritas.</p>
+                    <p><strong>Misi:</strong> Menyediakan layanan fotografi premium dengan standar artistik tertinggi untuk memenuhi kebutuhan personal maupun komersial Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="gallery-container fade-in reveal">
+            <div class="gallery-content">
+                <div class="icon-camera">📷</div> 
+                <h1>Exclusive Gallery</h1>
+                <div class="divider-gold"></div>
+                <h2>Coming Soon</h2>
+                <p>Kami sedang memilih momen terbaik untuk ditampilkan di sini.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="message-us">
+        <div class="contact-container fade-in reveal">
+            
+            <div class="contact-form-area">
+                <h2>Send a Message</h2>
+                <p class="form-subtitle">Beritahu kami kebutuhan fotografimu.</p>
+                
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="input-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="nama" placeholder="Siapa nama Anda?" autocomplete="off">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Tanggal Lahir</label>
+                            <input type="date" id="tgl-lahir">
+                        </div>
+                        <div class="input-group">
+                            <label>Jenis Kelamin</label>
+                            <select id="gender-select">
+                                <option value="" disabled selected>Pilih...</option>
+                                <option value="Laki-laki">Laki-Laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Pesan</label>
+                        <textarea id="pesan" rows="4" placeholder="Tuliskan detail request Anda..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Kirim Pesan</button>
+                </form>
+            </div>
+
+            <div class="contact-display-area">
+                <h2>Incoming Messages</h2>
+                <p class="form-subtitle">Pesan yang telah terkirim:</p>
+                
+                <div id="message-list">
+                    <div class="empty-state">Belum ada pesan masuk.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <audio id="backsound" loop>
+        <source src="assets/lagu3.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <div id="music-control" onclick="toggleMusic()">🎵</div>
+
+    <footer>
+        <p>&copy; 2026 Seraphim Photography. Created for Mini Project.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
